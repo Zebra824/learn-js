@@ -2,7 +2,7 @@ class PStack {
   #id;
   constructor() {
     this.#id = 1;
-    this._persons = [];
+    this.#persons = [];
   }
 
   showId() {
@@ -17,11 +17,19 @@ class PStackImpl extends PStack {
   }
 
   push(p) {
-    return this._persons.push(p)
+    return this.#persons.push(p)
   }
 
   pop() {
-    return this._persons.pop().age
+    return this.#persons.pop().age
+  }
+
+  get persons() {
+    return this.#persons;
+  }
+
+  set persons(p) {
+    this.#persons = p;
   }
 }
 

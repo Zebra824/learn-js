@@ -4,9 +4,12 @@ const originalMatrix = [
     [4, 5, 6],
     [7, 9, 8]
   ];
-  
+
+  //shallow copy
   const newMatrix = originalMatrix.map((row) => {
-    return row.sort();
+    let rowCopy = Array.from(row);
+    return rowCopy.sort();
+    //return [...row].sort();
   });
   
   // Modifying the original matrix (changing the last element of the first row)
